@@ -4,8 +4,9 @@
   "description": "Electrumx Proxy Service",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start-ts": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
+    "start": "node dist/index.js",
     "build": "tsc",
     "lint": "eslint --fix src test",
     "test": "jest",
@@ -25,6 +26,7 @@
     "bitcoinjs-lib": "^6.1.5",
     "borc": "^3.0.0",
     "bs58check": "^3.0.1",
+    "buffer": "^6.0.3",
     "cors": "^2.8.5",
     "crockford-base32": "^2.0.0",
     "dotenv": "^16.1.4",
@@ -37,7 +39,8 @@
     "js-sha256": "^0.10.1",
     "mime-types": "^2.1.35",
     "morgan": "^1.10.0",
-    "rpc-websockets": "^7.6.0"
+    "rpc-websockets": "^7.6.0",
+    "varuint-bitcoin": "^1.1.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
