@@ -39,4 +39,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 推送 Docker 镜像
-        run: docker push ghcr.io/goudanwoo/electrumx-proxy
+        run: docker push ghcr.io/goudanwoo/electrumx-proxy -a
