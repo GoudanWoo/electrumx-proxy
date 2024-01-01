@@ -1,0 +1,31 @@
+version: "3.8"
+name: "electrumx-proxy"
+
+services:
+  app:
+    image: ghcr.io/goudanwoo/electrumx-proxy:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ELECTRUMX_HOST: electrum.example.com
+      ELECTRUMX_PORT: 50001
+    expose:
+      - 8080/tcp
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: 1
+    networks:
+      net:
+
+networks:
+  net:
+    driver: bridge
+    ipam:
+      driver: default
